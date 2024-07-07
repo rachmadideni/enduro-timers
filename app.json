@@ -21,7 +21,25 @@
       }
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "@morrowdigital/watermelondb-expo-plugin"
+      ],
+      "expo-router",
+      ["expo-build-properties",{
+        "android": {
+          "kotlinVersion": "1.6.10",
+          "packagingOptions": {
+            "pickFirst": [
+              "**/libc++_shared.so"
+            ]
+          }
+        }
+      }]
+    ],
+    "scheme": "enduro-timers"
   }
 }
